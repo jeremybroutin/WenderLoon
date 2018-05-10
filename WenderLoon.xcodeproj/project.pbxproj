@@ -32,6 +32,7 @@
 		E3A929E520A3C5EC001F4592 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A929E420A3C5EC001F4592 /* IntentHandler.swift */; };
 		E3A929E920A3C5EC001F4592 /* RideRequestExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E3A929E220A3C5EC001F4592 /* RideRequestExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		E3A929EE20A3C652001F4592 /* RideRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A929ED20A3C652001F4592 /* RideRequestHandler.swift */; };
+		E3A929F120A3D30F001F4592 /* IntentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A929F020A3D30F001F4592 /* IntentsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		E3A929E620A3C5EC001F4592 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3A929ED20A3C652001F4592 /* RideRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRequestHandler.swift; sourceTree = "<group>"; };
 		E3A929EF20A3C857001F4592 /* WenderLoon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WenderLoon.entitlements; sourceTree = "<group>"; };
+		E3A929F020A3D30F001F4592 /* IntentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				22A47F791D48A5EE004E4156 /* CLLocation+Random.swift */,
+				E3A929F020A3D30F001F4592 /* IntentsModel.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				220B8F6F1D47BBBC00FD0A84 /* Balloon.swift in Sources */,
 				220B8F6A1D47B89F00FD0A84 /* WenderLoonSimulator.swift in Sources */,
 				22A47F7A1D48A5EE004E4156 /* CLLocation+Random.swift in Sources */,
+				E3A929F120A3D30F001F4592 /* IntentsModel.swift in Sources */,
 				220B8F731D48998100FD0A84 /* Motion.swift in Sources */,
 				220B8F6D1D47B90300FD0A84 /* Driver.swift in Sources */,
 			);

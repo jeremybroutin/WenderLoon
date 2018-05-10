@@ -12,8 +12,32 @@ class RideRequestHandler: NSObject, INRequestRideIntentHandling {
 
   func handle(intent: INRequestRideIntent,
               completion: @escaping (INRequestRideIntentResponse) -> Void) {
-    let response = INRequestRideIntentResponse(code: .failureRequiringAppLaunchNoServiceInArea,
-                                               userActivity: .none)
+    guard let pickup = intent.pickupLocation?.location else {
+      let response = INRequestRideIntentResponse(code: .failure, userActivity: .none)
+      completion(response)
+      return
+    }
+
+    let dropoff = intent.dropOffLocation?.location ?? pickup.randomPointWithin(radius: 10_000)
+
+    let response: INRequestRideIntentResponse
+
+    if let balloon = simulator.requestRide(pickup: pickup, dropoff: dropoff) {
+      let status = INRideStatus()
+      status.rideIdentifier = balloon.driver.name
+      status.phase = .confirmed
+      status.vehicle = balloon.rideIntentVehicle
+      status.driver = balloon.driver.rideIntentDriver
+      status.estimatedPickupDate = balloon.etaAtNextDestination
+      status.pickupLocation = intent.pickupLocation
+      status.dropOffLocation = intent.dropOffLocation
+
+      response = INRequestRideIntentResponse(code: .success, userActivity: .none)
+      response.rideStatus = status
+    } else {
+      response = INRequestRideIntentResponse(code: .failureRequiringAppLaunchNoServiceInArea, userActivity: .none)
+    }
+
     completion(response)
   }
 
